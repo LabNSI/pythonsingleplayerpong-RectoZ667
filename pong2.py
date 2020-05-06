@@ -19,7 +19,7 @@ screen.fill(RED)
 pygame.display.update()
 
 radius = 25
-pygame.draw.circle(___, ___, (___, ___), ___)
+pygame.draw.circle(screen, WHITE, (WIDTH//2, HEIGHT//2), radius)
 
 end = False
 while not end:

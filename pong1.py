@@ -4,7 +4,7 @@ pygame.init()
 
 WIDTH = 300
 HEIGHT = 200
-SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 pygame.display.set_caption('My Game')
 
@@ -15,7 +15,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 255)
 
-SCREEN.fill(RED)
+screen.fill(RED)
 pygame.display.update()
 
 end = False

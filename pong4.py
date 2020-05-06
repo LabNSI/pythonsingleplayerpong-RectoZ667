@@ -40,12 +40,12 @@ while not end:
     if key[pygame.K_o]:
         print("Key O pressed")
         print("Mode Auto")
-        auto = ___
+        auto = True
 
     if key[pygame.K_m]:
         print("Key M pressed")
         print("Mode Manuel")
-        auto = ___
+        auto = False
 
     if not auto:
         # Manual mode :
@@ -74,34 +74,42 @@ while not end:
 
         if key[pygame.K_UP]:
             print("Key UP pressed")
-            ???
+            y = y - speed
+            if y < radius:
+              y = radius
 
         if key[pygame.K_DOWN]:
             print("Key DOWN pressed")
-            ???
+            y = y + speed
+            if y > HEIGHT-radius:
+              y = HEIGHT-radius
 
         if key[pygame.K_LEFT]:
             print("Key LEFT pressed")
-            ???
+            x = x - speed
+            if x < radius:
+              x = radius
 
         if key[pygame.K_RIGHT]:
             print("Key RIGHT pressed")
-            ???
+            x = x + speed
+            if x > WIDTH-radius:
+              x = WIDTH-radius
 
     else:
         # if the circle touches the right and left edges
         # reverse direction on x-axis
-        if ____:
-            x_sens = ____
+        if x < radius or x > WIDTH - radius:
+            x_sens = -x_sens
 
         # if the circle touches the lower and upper edges
         # reverse direction on y-axis
-        if ___:
-            y_sens = ___
+        if y < radius or y > HEIGHT - radius:
+            y_sens = -y_sens
 
         # compute new coordonates
-        x = x + ___
-        y = y + ___
+        x = x + x_sens*speed
+        y = y + y_sens*speed
 
 
     pygame.draw.circle(screen, WHITE, (x, y), radius)
